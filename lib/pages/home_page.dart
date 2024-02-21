@@ -1,5 +1,7 @@
 import 'package:crypto_tracker/pages/coin_tracker.dart';
+import 'package:crypto_tracker/pages/exchange_tracker_page.dart';
 import 'package:crypto_tracker/pages/header.dart';
+import 'package:crypto_tracker/pages/nft_tracker_page.dart';
 import 'package:crypto_tracker/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -26,14 +28,26 @@ class _HomePageState extends State<HomePage>
 
   final List<Widget> pages = [
     CoinTracker(),
+    ExchangeTrackerPage(),
+    NftTrackerPage(),
     const Center(
-      child: Text('Exchanges'),
-    ),
-    const Center(
-      child: Text('NFTs'),
-    ),
-    const Center(
-      child: Text('About'),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 50,
+          ),
+          Text(
+            'Developed by Daksh',
+            style: TextStyle(fontSize: 35),
+          ),
+          SelectionArea(
+            child: Text(
+              'For feedback and suggestions, mail at mr.codefrost@gmail.com',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+        ],
+      ),
     ),
   ];
 
